@@ -12,7 +12,7 @@ const Home = () => {
       }}
       className="h-screen flex items-center"
     >
-      <div className="flex flex-col xl:flex-rom items-center justify-between w-full">
+      <div className="flex flex-col xl:flex-row items-center justify-between w-full">
         <div className="w-full xl:w-[550px]">text</div>
         <div className="hidden xl:block flex-1 relative z-20">
           {/*blob*/}
