@@ -1,8 +1,25 @@
-import {FaGithub} from "react-icons/fa";
+import { FaGithub, FaCode } from "react-icons/fa";
+import { SiLeetcode, SiCodechef, SiHackerrank } from "react-icons/si";
 
 const platforms = [
 {
     icon: <FaGithub />,
+    path: "",
+},
+{
+    icon: <FaCode />,
+    path: "",
+},
+{
+    icon: <SiLeetcode />,
+    path: "",
+},
+{
+    icon: <SiCodechef />,
+    path: "",
+},
+{
+    icon: <SiHackerrank />,
     path: "",
 }
 
