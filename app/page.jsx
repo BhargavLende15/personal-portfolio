@@ -46,31 +46,31 @@ const Home = () => {
           {/* contact info */}
           <div className="flex flex-col gap-4 mb-12 xl:mb-0">
             {/* mail */}
-            <div className="flex items-center gap-4 text-lg">
+            <a href="mailto:bhargavlende2208@gmail.com" className="flex items-center gap-4 text-lg hover:text-accent transition-colors">
               <span className="text-accent">
                 <HiOutlineMail className="text-xl" />
               </span>
               <span>bhargavlende2208@gmail.com</span>
-            </div>
+            </a>
 
-            <div className="flex items-center gap-4 text-lg">
+            <a href="https://www.linkedin.com/in/bhargav-lende-4b0232325/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg hover:text-accent transition-colors">
               <span className="text-accent">
                 <FaLinkedin className="text-xl" />
               </span>
               <span>Bhargav Lende</span>
-            </div>
+            </a>
 
-            <div className="flex items-center gap-4 text-lg">
+            <a href="https://www.instagram.com/lensational_b04" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg hover:text-accent transition-colors">
               <span className="text-accent">
                 <BiLogoInstagramAlt className="text-xl" />
               </span>
               <span>lensational_b04</span>
-            </div>
+            </a>
           </div>
 
           {/* Socials */}
           <Platforms 
-            containerStyles="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-50"
+            containerStyles="flex gap-6 mt-8 xl:fixed xl:right-6 xl:top-1/2 xl:-translate-y-1/2 xl:flex-col xl:items-center xl:gap-4 xl:z-50 xl:mt-0"
             iconStyles="bg-accent text-white hover:bg-accent-hover transition w-[48px] h-[48px]
             text-[22px] flex items-center justify-center rounded-full cursor-pointer"
           />

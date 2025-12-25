@@ -1,11 +1,20 @@
 import Logo from './Logo'
-import Platforms from './Platforms'
 import {CiMenuFries} from 'react-icons/ci'
 import {MdFileDownload} from "react-icons/md";
+import {FaGithub} from "react-icons/fa";
+import {SiLeetcode, SiCodechef, SiHackerrank} from "react-icons/si";
 
 import {Sheet, SheetContent, SheetDescription,SheetHeader, SheetTitle, SheetTrigger, } from "@/components/ui/sheet";
 import NavLinks from './NavLinks';
 import { Children } from 'react';
+import Link from 'next/link';
+
+const socialLinks = [
+  { icon: <FaGithub />, path: "https://github.com/BhargavLende15" },
+  { icon: <SiLeetcode />, path: "https://leetcode.com/u/Bhargav_Lende/" },
+  { icon: <SiCodechef />, path: "https://codolio.com/profile/Bhargav-Lende" },
+  { icon: <SiHackerrank />, path: "https://www.hackerrank.com/profile/bhargavlende11" },
+];
 
 const Header = () => {
   return (
@@ -28,20 +37,31 @@ const Header = () => {
                             </SheetDescription>
                         </SheetHeader>
                         <NavLinks containerStyles="flex flex-col gap-8 max-w-[100px] "/>
-                        <div>
-                            <button className="btn btn-lg btn-tertiary mb-16">
+                        <div className="flex flex-col items-center gap-4">
+                            <Link href="/contact" className="btn btn-lg btn-tertiary">
                                 <div className="flex items-center gap-3">
-                                    <span>View CV</span>
+                                    <span>Let's Talk</span>
+                                </div>
+                            </Link>
+                            {/* <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-accent mb-8">
+                                <div className="flex items-center gap-3">
+                                    <span>View Resume</span>
                                     <MdFileDownload className="text-xl" />
-                                    </div>
-                            </button>
-                            <Platforms 
-                                containerStyles="flex gap-4"
-                                iconStyles="bg-accent text-white hover:bg-accent-hover 
-                                transition w-[40px] h-[40px] text-[20px] flex items-center 
-                                justify-center rounded-full cursor-pointer"
-                            
-                            />
+                                </div>
+                            </a> */}
+                            {/* <div className="flex gap-4 justify-center">
+                              {socialLinks.map((item, index) => (
+                                <a 
+                                  key={index}
+                                  href={item.path}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bg-accent text-white hover:bg-accent-hover transition w-[40px] h-[40px] text-[20px] flex items-center justify-center rounded-full cursor-pointer"
+                                >
+                                  {item.icon}
+                                </a>
+                              ))}
+                            </div> */}
                         </div>
                     </SheetContent>
                 </Sheet>
