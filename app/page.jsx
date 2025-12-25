@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { MdArrowOutward } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
+import { FaLinkedin } from "react-icons/fa";
+import { BiLogoInstagramAlt } from "react-icons/bi"
 import Blob from "@/components/Blob";
 import Image from "next/image";
+import Platforms from "@/components/Platforms";
 import avatarImg from "@/public/assets/assets/avatar.png";
 
 const Home = () => {
@@ -41,7 +44,7 @@ const Home = () => {
           </button>
 
           {/* contact info */}
-          <div>
+          <div className="flex flex-col gap-4 mb-12 xl:mb-0">
             {/* mail */}
             <div className="flex items-center gap-4 text-lg">
               <span className="text-accent">
@@ -49,7 +52,30 @@ const Home = () => {
               </span>
               <span>bhargavlende2208@gmail.com</span>
             </div>
+
+            <div className="flex items-center gap-4 text-lg">
+              <span className="text-accent">
+                <FaLinkedin className="text-xl" />
+              </span>
+              <span>Bhargav Lende</span>
+            </div>
+
+            <div className="flex items-center gap-4 text-lg">
+              <span className="text-accent">
+                <BiLogoInstagramAlt className="text-xl" />
+              </span>
+              <span>lensational_b04</span>
+            </div>
           </div>
+
+          {/* Socials */}
+          <Platforms 
+            containerStyles="flex 2xl:flex-col gap-6 xl:hidden 2xl:flex 2xl:absolute
+            2xl:to[-1/2 2xl:right-2 2xl:transform 2xl:translate-x-1/2
+            2xl:-translate-y-1/2"
+            iconStyles="bg-accent text-white hover:bg-accent-hover transition w-[48px] h-[48px]
+            text-[22px] flex items-center justify-center rounded-full cursor-pointer"
+          />
         </div>
         
         {/* blob & image */}
