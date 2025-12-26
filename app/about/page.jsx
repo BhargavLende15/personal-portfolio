@@ -3,17 +3,19 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from "next/image";
+import Blob from "@/components/Blob";
+import avatarImg from "@/public/assets/assets/avatar.png";
 import { FaPython, FaJava, FaJs, FaReact, FaHtml5, FaDatabase, FaChartBar } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 
 const technologies = [
   { icon: <FaPython />, name: "Python" },
-  { icon: <FaDatabase />, name: "SQL" },
-  { icon: <FaJava />, name: "Java" },
-  { icon: <FaChartBar />, name: "Power BI" },
-  { icon: <FaJs />, name: "JavaScript" },
   { icon: <FaReact />, name: "React.js" },
+  { icon: <FaJava />, name: "Java" },
+  { icon: <FaJs />, name: "JavaScript" },
+  { icon: <FaDatabase />, name: "SQL" },
   { icon: <FaHtml5 />, name: "HTML5" },
+  { icon: <FaChartBar />, name: "Power BI" },
   { icon: <SiTailwindcss />, name: "Tailwind CSS" },
 ];
 
@@ -28,7 +30,7 @@ const education = [
     institution: "Shri Ramdeobaba college of Engineering & Management",
     degree: "Honours in Web Development",
     year: "2024 - Present",
-    desc: "Pursuing honours in Web Development with an overall grade of AA, focused on building practical skills through real-world projects."
+    desc: "Pursuing honours in Web Development with an overall grade of AA, focused on building skills through real-world projects."
   },
   {
     institution: "School of Scholars, Wanadongri",
@@ -68,7 +70,7 @@ const activities = [
 ];
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('skills');
+  const [activeTab, setActiveTab] = useState('technologies');
 
   return (
     <motion.section initial={{opacity: 0}} 
@@ -76,13 +78,21 @@ const About = () => {
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
 
-        className='h-screen flex items-center'
+        className='h-screen flex items-center pt-24 2xl:pt-0'
         >
           <div className='container mx-auto px-0'>
             <div className='flex flex-col xl:flex-row items-center gap-24 w-full h-[680px]'>
               {/* img & social icons*/}
-              <div className='hidden xl:flex w-full h-full pt-14 max-w-[430px] relative bg-pink-50/10'>
-                1
+              <div className='hidden xl:block flex-1 relative z-30'>
+                <Blob containerStyles="w-[450px] h-[450px]"/>
+                <Image 
+                  src={avatarImg} 
+                  alt="Bhargav Lende" 
+                  width={500} 
+                  height={500} 
+                  quality={100} 
+                  className="absolute -top-16 left-[45px]"
+                />
               </div>
               {/* scroll area*/}
               <ScrollArea className="w-full h-[680px]">
