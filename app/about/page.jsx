@@ -46,15 +46,23 @@ const education = [
 
 const activities = [
   {
-    position: "Resource Manager @ REEF",
+    role: "Data Science Intern",
+    org: "Cognifyz Technologies",
+    desc: "Worked on data analysis and visualization tasks, applying Python to extract insights from datasets and support data-driven decision making.",
+  },
+  {
+    role: "Resource Manager",
+    org: "REEF",
     desc: "Actively contributed to birding initiatives, public speaking events, and photography, while managing the resources for the forum activities.",
   },
   {
-    position: "Photography Co-head @ DASCA",
+    role: "Photography Co-head",
+    org: "DASCA",
     desc: "Led photography efforts by documenting events, curating visual content, and supporting creative storytelling for the association.",
   },
   {
-    position: "Member @ NAZARIYA",
+    role: "Member",
+    org: "NAZARIYA",
     desc: "Being a part of Nazariya - The Photography club, I've contributed to  events and creative initiatives focused on collaboration and expression.",
   },
 ];
@@ -145,7 +153,11 @@ const About = () => {
                         <ul className="flex flex-col gap-6 max-w-[540px] list-disc pl-5">
                           {activities.map((item, index) => (
                             <li key={index} className="text-white/80 leading-relaxed pl-2 text-lg">
-                              <h4 className="text-accent text-lg font-bold">{item.position}</h4>
+                              <h4 className="text-lg font-bold">
+                              <span className="text-accent">{item.role}</span>
+                              <span className="text-white mx-1"> @</span>
+                              <span className="text-white">{item.org}</span>
+                            </h4>
                               <p className="text-white/80 text-base font-semibold">{item.desc}</p>
                             </li>
                           ))}
