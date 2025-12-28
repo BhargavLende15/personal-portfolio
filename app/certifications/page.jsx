@@ -3,51 +3,59 @@
 import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
-import { FaPenNib, FaLaptopCode, FaServer, FaSearch, FaVideo } from "react-icons/fa";
+import {
+  FaJava,
+  FaCode,
+  FaUsersCog,
+  FaBrain,
+  FaLaptopCode
+} from "react-icons/fa";
+
 import { MdArrowOutward } from "react-icons/md";
 
 const certifications = [
   {
-    icon: <FaPenNib />,
+    icon: <FaCode />,
     title: "DSA in Java",
-    description: "Mastering the art of creating intuitive and user-friendly interfaces.",
+    description: "Mastering data structures and algorithms using Java.",
     date: "2024",
     issuer: "NPTEL",
     href: ""
   },
   {
-    icon: <FaLaptopCode />,
+    icon: <FaUsersCog />,
     title: "Smart India Hackathon",
-    description: "Building responsive and interactive web applications using modern frameworks.",
+    description: "Collaborative problem-solving and full-stack development.",
     date: "2024",
     issuer: "RBU",
     href: ""
   },
   {
-    icon: <FaServer />,
+    icon: <FaLaptopCode />,
     title: "Adobe Hackathon",
-    description: "Designing robust server-side architecture and API integrations.",
+    description: "Building innovative solutions with a strong focus on UX and performance.",
     date: "2023",
     issuer: "Adobe",
     href: ""
   },
   {
-    icon: <FaSearch />,
+    icon: <FaJava />,
     title: "Java Basics",
-    description: "Optimizing web content to improve visibility and ranking on search engines.",
+    description: "Core Java concepts including OOP, syntax, and problem-solving.",
     date: "2023",
     issuer: "HackerRank",
     href: ""
   },
   {
-    icon: <FaVideo />,
+    icon: <FaBrain />,
     title: "AI-ML Virtual Internship",
-    description: "Professional video editing and post-production for digital media.",
+    description: "Hands-on experience with machine learning concepts and applications.",
     date: "2022",
     issuer: "EduSkills",
     href: ""
   },
 ];
+
 
 const Certifications = () => {
   return (
@@ -75,7 +83,7 @@ const Certifications = () => {
                   className="bg-tertiary/20 p-6 rounded-xl border border-accent/20 hover:border-accent transition-all duration-300 group flex flex-col gap-4"
                 >
                   <div className="flex justify-between items-start">
-                    <div className="text-4xl text-transparent stroke-accent group-hover:text-accent transition-all duration-300">
+                    <div className="text-2xl text-transparent stroke-accent group-hover:text-accent transition-all duration-300">
                       {/* Using text color for icon, but adding a specific effect if needed. 
                           For now, just text-accent is safer. */}
                       <span className="text-white/80 group-hover:text-accent transition-colors duration-300">

@@ -70,7 +70,7 @@ const activities = [
 ];
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('technologies');
+  const [activeTab, setActiveTab] = useState('education');
 
   return (
     <motion.section initial={{opacity: 0}} 
