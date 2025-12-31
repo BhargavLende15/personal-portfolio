@@ -82,7 +82,7 @@ const Contact = () => {
       animate={{
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
-        className='min-h-screen flex items-center pt-20 xl:pt-12 pb-12'  
+        className='min-h-screen flex items-center pt-4 xl:pt-12 pb-12'  
       >
         <div className='container mx-auto w-full h-full flex flex-col items-center
         xl:justify-center'>

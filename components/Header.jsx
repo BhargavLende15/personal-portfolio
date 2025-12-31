@@ -20,7 +20,7 @@ const socialLinks = [
 
 const Header = () => {
   return (
-    <header className="2xl:hidden sticky top-0 backdrop-blur-sm z-40 bg-primary/95">
+    <header className="2xl:hidden fixed top-0 left-0 right-0 backdrop-blur-sm z-50 bg-primary/95 border-b border-white/5">
         <div className="container mx-auto">
             <div className='flex items-center justify-between py-6'>
                 {/* logo */}

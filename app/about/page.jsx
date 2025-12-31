@@ -78,10 +78,10 @@ const About = () => {
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
 
-        className='min-h-screen flex items-center pt-20 2xl:pt-12 pb-12'
+        className='min-h-screen flex items-center pt-4 2xl:pt-12 pb-12'
         >
           <div className='container mx-auto px-0'>
-            <div className='flex flex-col xl:flex-row items-center gap-24 w-full'>
+            <div className='flex flex-col xl:flex-row items-center gap-24 w-full h-[calc(100vh-80px)] xl:h-auto'>
               {/* img & social icons*/}
               <div className='hidden xl:block flex-1 relative z-30'>
                 <Blob containerStyles="w-[400px] h-[400px]"/>
@@ -95,9 +95,9 @@ const About = () => {
                 />
               </div>
               {/* scroll area*/}
-              <ScrollArea className="w-full h-[calc(100vh-180px)] xl:h-[680px]">
-                <div className="pr-8 pt-4 xl:pt-0">
-                  <div className='flex items-center gap-3 mb-4 mt-6 xl:mt-0'>
+              <ScrollArea className="w-full h-[calc(100vh-100px)] xl:h-[680px]">
+                <div className="pr-8 pt-2 xl:pt-0">
+                  <div className='flex items-center gap-3 mb-4 mt-2 xl:mt-0'>
                     <div className='w-2 h-2 bg-accent rounded-full'></div>
                     <p className='text-sm'>About me</p>
                   </div>
@@ -139,18 +139,18 @@ const About = () => {
                   </div>
 
                   {/* Tab Content */}
-                  <div className="min-h-[400px]">
+                  <div className="min-h-[300px] pb-4">
 
                     {/* Education Section */}
                     {activeTab === 'education' && (
                       <div className="mb-8">
-                        <div className="flex flex-col gap-6 max-w-[580px]">
+                        <div className="flex flex-col gap-5 max-w-[580px] w-full">
                           {education.map((item, index) => (
-                            <div key={index} className="flex flex-col gap-1 bg-tertiary/20 p-5 rounded-xl border border-accent/20 hover:border-accent transition-all duration-300">
+                            <div key={index} className="flex flex-col gap-1 bg-tertiary/20 p-4 rounded-xl border border-accent/20 hover:border-accent transition-all duration-300 w-full">
                               <span className="text-accent text-sm font-semibold">{item.year}</span>
-                              <h4 className="text-lg font-bold">{item.degree}</h4>
-                              <p className="text-white/80 font-semibold text-xs">{item.institution}</p>
-                              <p className='text-white/60 text-xs'>{item.desc}</p>
+                              <h4 className="text-base xl:text-lg font-bold">{item.degree}</h4>
+                              <p className="text-white/80 font-semibold text-xs break-words">{item.institution}</p>
+                              <p className='text-white/60 text-xs break-words'>{item.desc}</p>
                             </div>
                           ))}
                         </div>
@@ -160,15 +160,15 @@ const About = () => {
                     {/* Activities Section */}
                     {activeTab === 'activities' && (
                       <div className="mb-8">
-                        <ul className="flex flex-col gap-5 max-w-[580px] list-disc pl-5">
+                        <ul className="flex flex-col gap-4 max-w-[580px] w-full list-disc pl-5">
                           {activities.map((item, index) => (
-                            <li key={index} className="text-white/80 leading-relaxed pl-2 text-base">
-                              <h4 className="text-base font-bold">
+                            <li key={index} className="text-white/80 leading-relaxed pl-2 text-sm xl:text-base w-full">
+                              <h4 className="text-sm xl:text-base font-bold">
                               <span className="text-accent">{item.role}</span>
                               <span className="text-white mx-1"> @</span>
                               <span className="text-white">{item.org}</span>
                             </h4>
-                              <p className="text-white/80 text-xs font-semibold">{item.desc}</p>
+                              <p className="text-white/80 text-xs font-semibold break-words">{item.desc}</p>
                             </li>
                           ))}
                         </ul>
@@ -178,13 +178,13 @@ const About = () => {
                     {/* Skills Section */}
                     {activeTab === 'technologies' && (
                       <div className="mb-8">
-                        <div className="grid grid-cols-2 gap-y-6 gap-x-8 max-w-[580px]">
+                        <div className="grid grid-cols-2 gap-y-5 gap-x-6 max-w-[580px] w-full">
                           {technologies.map((skill, index) => (
-                            <div key={index} className="flex items-center gap-3 group">
-                              <div className="text-xl text-accent group-hover:text-white transition-all duration-300">
+                            <div key={index} className="flex items-center gap-3 group w-full">
+                              <div className="text-lg xl:text-xl text-accent group-hover:text-white transition-all duration-300 flex-shrink-0">
                                 {skill.icon}
                               </div>
-                              <p className="text-sm xl:text-base">{skill.name}</p>
+                              <p className="text-xs xl:text-sm break-words">{skill.name}</p>
                             </div>
                           ))}
                         </div>

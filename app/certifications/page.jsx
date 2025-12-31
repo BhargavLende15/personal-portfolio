@@ -65,17 +65,17 @@ const Certifications = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-screen flex items-center justify-center pt-20 xl:pt-12 pb-12"
+      className="h-screen flex items-center justify-center pt-4 xl:pt-12 pb-12"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-8">
+      <div className="container mx-auto h-full flex flex-col">
+        <div className="flex flex-col gap-6 flex-1 min-h-0">
           <div className="flex flex-col gap-2 text-center xl:text-left">
             <h2 className="h2 font-bold">
               <span className="text-accent">Certifications</span> & <span className="text-accent">Credentials</span>
             </h2>
           </div>
 
-          <ScrollArea className="h-[calc(100vh-200px)] xl:h-[480px] w-full">
+          <ScrollArea className="flex-1 w-full min-h-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-4">
               {certifications.map((cert, index) => (
                 <div
