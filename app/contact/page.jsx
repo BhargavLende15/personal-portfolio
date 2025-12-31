@@ -82,7 +82,7 @@ const Contact = () => {
       animate={{
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
-        className='min-h-screen flex items-center py-12 xl:py-0'  
+        className='min-h-screen flex items-center pt-32 xl:pt-12 pb-12'  
       >
         <div className='container mx-auto w-full h-full flex flex-col items-center
         xl:justify-center'>
@@ -91,35 +91,35 @@ const Contact = () => {
               {/*text*/}
               <div className='flex-1 xl:w-[600px] flex flex-col gap-12'>
                 <div>
-                  <h2 className='h2 mb-6'>
+                  <h2 className='h2 mb-5'>
                     Get In <span className='text-accent'>Touch</span>
                   </h2>
-                  <p className='max-w-[460px]'>
+                  <p className='max-w-[460px] text-xs xl:text-sm'>
                     Interested in working together or building something impactful?
-                    Whether it’s web development, data-driven projects, or tech discussions,
-                    my inbox is always open. Let’s create something meaningful.
+                    Whether it's web development, data-driven projects, or tech discussions,
+                    my inbox is always open. Let's create something meaningful.
                   </p>
                 </div>
                 {/* info */}
-                <div className='flex flex-col gap-8 mb-6 xl:mb-0'>
+                <div className='flex flex-col gap-6 mb-6 xl:mb-0'>
                   { /* phone */}
-                  <div className='flex items-center gap-4 text-lg'>
+                  <div className='flex items-center gap-3 text-sm xl:text-base'>
                     <span className='text-accent'>
-                      <HiOutlineMail className="text-2xl" />
+                      <HiOutlineMail className="text-xl" />
                     </span>
                     <span>bhargavlendeng@gmail.com</span>
                   </div>
                   {/* email */}
-                  <div className='flex items-center gap-4 text-lg'>
+                  <div className='flex items-center gap-3 text-sm xl:text-base'>
                     <span className='text-accent'>
-                      <FaLinkedin className="text-2xl" />
+                      <FaLinkedin className="text-xl" />
                     </span>
                     <span>Bhargav Lende</span>
                   </div>
                   {/* location */}
-                  <div className='flex items-center gap-4 text-lg'>
+                  <div className='flex items-center gap-3 text-sm xl:text-base'>
                     <span className='text-accent'>
-                      <HiOutlineMapPin className="text-2xl" />
+                      <HiOutlineMapPin className="text-xl" />
                     </span>
                     <span>Nagpur, India</span>
                   </div>

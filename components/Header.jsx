@@ -1,8 +1,10 @@
+"use client";
 import Logo from './Logo'
 import {CiMenuFries} from 'react-icons/ci'
 import {MdFileDownload} from "react-icons/md";
 import {FaGithub} from "react-icons/fa";
 import {SiLeetcode, SiCodechef, SiHackerrank} from "react-icons/si";
+import { usePathname } from 'next/navigation';
 
 import {Sheet, SheetContent, SheetDescription,SheetHeader, SheetTitle, SheetTrigger, } from "@/components/ui/sheet";
 import NavLinks from './NavLinks';
@@ -17,8 +19,11 @@ const socialLinks = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
+  const isAboutPage = pathname === '/about';
+  
   return (
-    <header className='2xl:hidden relative z-40 bg-primary'>
+    <header className={`2xl:hidden ${isAboutPage ? 'sticky top-0 backdrop-blur-sm' : 'relative'} z-40 bg-primary/95`}>
         <div className="container mx-auto">
             <div className='flex items-center justify-between py-6'>
                 {/* logo */}

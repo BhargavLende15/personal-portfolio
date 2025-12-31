@@ -70,7 +70,7 @@ const activities = [
 ];
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('education');
+  const [activeTab, setActiveTab] = useState('technologies');
 
   return (
     <motion.section initial={{opacity: 0}} 
@@ -78,51 +78,51 @@ const About = () => {
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
 
-        className='min-h-screen flex items-center py-12 xl:py-0'
+        className='min-h-screen flex items-center pt-32 2xl:pt-12 pb-12'
         >
           <div className='container mx-auto px-0'>
-            <div className='flex flex-col xl:flex-row items-center gap-24 w-full h-[680px]'>
+            <div className='flex flex-col xl:flex-row items-center gap-24 w-full'>
               {/* img & social icons*/}
               <div className='hidden xl:block flex-1 relative z-30'>
-                <Blob containerStyles="w-[450px] h-[450px]"/>
+                <Blob containerStyles="w-[400px] h-[400px]"/>
                 <Image 
                   src={avatarImg} 
                   alt="Bhargav Lende" 
-                  width={500} 
-                  height={500} 
+                  width={400} 
+                  height={400} 
                   quality={100} 
-                  className="absolute -top-16 left-[45px]"
+                  className="absolute -top-12 left-[35px]"
                 />
               </div>
               {/* scroll area*/}
-              <ScrollArea className="w-full h-[680px]">
-                <div className="pr-8">
-                  <div className='flex items-center gap-3 mb-4'>
+              <ScrollArea className="w-full h-[calc(100vh-180px)] xl:h-[680px]">
+                <div className="pr-8 pt-4 xl:pt-0">
+                  <div className='flex items-center gap-3 mb-4 mt-6 xl:mt-0'>
                     <div className='w-2 h-2 bg-accent rounded-full'></div>
-                    <p>About me</p>
+                    <p className='text-sm'>About me</p>
                   </div>
                   <h2 className='h2 mb-6'>
                     <span className='text-accent'>Intent creates Impact</span>
                   </h2>
-                  <p className='max-w-[540px] mb-12'>
+                  <p className='max-w-[540px] mb-6 text-xs xl:text-sm'>
                     Hola! I'm <span className='text-accent brightness-130 font-bold'>Bhargav Lende</span>, I began my college journey with little knowledge of 
                     <span className='text-accent brightness-130 font-bold'> data science</span>, but discovering the field in my first year led to a strong 
-                    interest that continues to grow. Since then, I’ve been building a foundation in 
+                    interest that continues to grow. Since then, I've been building a foundation in 
                     <span className='text-accent brightness-130 font-bold'> Python</span>, <span className='text-accent brightness-130 font-bold'>Java</span>, <span className='text-accent brightness-130 font-bold'>SQL</span>
                     , and <span className='text-accent brightness-130 font-bold'>data analysis</span> while also learning <span className='text-accent brightness-130 font-bold'>web development</span> to create interactive, data-driven applications.
                   </p>
-                  <p className='max-w-[540px] mb-12'>
-                    Over time, I’ve worked on academic and personal projects spanning data analysis, machine learning fundamentals, 
+                  <p className='max-w-[540px] mb-6 text-xs xl:text-sm'>
+                    Over time, I've worked on academic and personal projects spanning data analysis, machine learning fundamentals, 
                     and full-stack web development, helping me gain practical, hands-on experience. I also consistently practice 
                     problem-solving on platforms like LeetCode to strengthen my analytical and logical thinking.
                   </p>
-                  <p className='max-w-[540px] mb-16'>
+                  <p className='max-w-[540px] mb-10 text-xs xl:text-sm'>
                     Currently, my focus is on growing as a data scientist while continuing to learn modern web technologies, with 
                     the goal of building impactful, data-driven applications that blend strong insights with clean design.
                   </p>
                   
                   {/* Navigation Tabs */}
-                  <div className="flex gap-8 mb-12 border-b border-white/20 pb-2 max-w-[540px]">
+                  <div className="flex gap-6 mb-8 border-b border-white/20 pb-2 max-w-[540px]">
                     {['education', 'activities', 'technologies', ].map((tab) => (
                       <button 
                         key={tab}
@@ -131,7 +131,7 @@ const About = () => {
                           activeTab === tab 
                             ? 'text-accent border-b-2 border-accent' 
                             : 'text-white/60 hover:text-white'
-                        } capitalize font-medium text-xl pb-2 transition-all`}
+                        } capitalize font-medium text-base xl:text-lg pb-2 transition-all`}
                       >
                         {tab}
                       </button>
@@ -143,14 +143,14 @@ const About = () => {
 
                     {/* Education Section */}
                     {activeTab === 'education' && (
-                      <div className="mb-12">
-                        <div className="flex flex-col gap-8 max-w-[540px]">
+                      <div className="mb-8">
+                        <div className="flex flex-col gap-6 max-w-[540px]">
                           {education.map((item, index) => (
-                            <div key={index} className="flex flex-col gap-1 bg-tertiary/20 p-6 rounded-xl border border-accent/20 hover:border-accent transition-all duration-300">
-                              <span className="text-accent text-base font-semibold">{item.year}</span>
-                              <h4 className="text-xl font-bold">{item.degree}</h4>
-                              <p className="text-white/80 font-semibold">{item.institution}</p>
-                              <p className='text-white/60 text-sm'>{item.desc}</p>
+                            <div key={index} className="flex flex-col gap-1 bg-tertiary/20 p-5 rounded-xl border border-accent/20 hover:border-accent transition-all duration-300">
+                              <span className="text-accent text-sm font-semibold">{item.year}</span>
+                              <h4 className="text-lg font-bold">{item.degree}</h4>
+                              <p className="text-white/80 font-semibold text-xs">{item.institution}</p>
+                              <p className='text-white/60 text-xs'>{item.desc}</p>
                             </div>
                           ))}
                         </div>
@@ -159,16 +159,16 @@ const About = () => {
 
                     {/* Activities Section */}
                     {activeTab === 'activities' && (
-                      <div className="mb-12">
-                        <ul className="flex flex-col gap-6 max-w-[540px] list-disc pl-5">
+                      <div className="mb-8">
+                        <ul className="flex flex-col gap-5 max-w-[540px] list-disc pl-5">
                           {activities.map((item, index) => (
-                            <li key={index} className="text-white/80 leading-relaxed pl-2 text-lg">
-                              <h4 className="text-lg font-bold">
+                            <li key={index} className="text-white/80 leading-relaxed pl-2 text-base">
+                              <h4 className="text-base font-bold">
                               <span className="text-accent">{item.role}</span>
                               <span className="text-white mx-1"> @</span>
                               <span className="text-white">{item.org}</span>
                             </h4>
-                              <p className="text-white/80 text-base font-semibold">{item.desc}</p>
+                              <p className="text-white/80 text-xs font-semibold">{item.desc}</p>
                             </li>
                           ))}
                         </ul>
@@ -177,14 +177,14 @@ const About = () => {
 
                     {/* Skills Section */}
                     {activeTab === 'technologies' && (
-                      <div className="mb-12">
-                        <div className="grid grid-cols-2 gap-y-8 gap-x-10 max-w-[540px]">
+                      <div className="mb-8">
+                        <div className="grid grid-cols-2 gap-y-6 gap-x-8 max-w-[540px]">
                           {technologies.map((skill, index) => (
-                            <div key={index} className="flex items-center gap-4 group">
-                              <div className="text-2xl text-accent group-hover:text-white transition-all duration-300">
+                            <div key={index} className="flex items-center gap-3 group">
+                              <div className="text-xl text-accent group-hover:text-white transition-all duration-300">
                                 {skill.icon}
                               </div>
-                              <p className="text-base">{skill.name}</p>
+                              <p className="text-sm xl:text-base">{skill.name}</p>
                             </div>
                           ))}
                         </div>
