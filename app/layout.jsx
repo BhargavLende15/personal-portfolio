@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
             </div>
             <div className="w-full max-w-[960px] px-[15px] mx-auto overflow-x-hidden">
               <Header />
-              <div className="w-full">{children}</div>
+              <div className="w-full pt-0 2xl:pt-0">{children}</div>
             </div>
         </div>
         </PageTransition>

@@ -19,11 +19,8 @@ const socialLinks = [
 ];
 
 const Header = () => {
-  const pathname = usePathname();
-  const isAboutPage = pathname === '/about';
-  
   return (
-    <header className={`2xl:hidden ${isAboutPage ? 'sticky top-0 backdrop-blur-sm' : 'relative'} z-40 bg-primary/95`}>
+    <header className="2xl:hidden sticky top-0 backdrop-blur-sm z-40 bg-primary/95">
         <div className="container mx-auto">
             <div className='flex items-center justify-between py-6'>
                 {/* logo */}

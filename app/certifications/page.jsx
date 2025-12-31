@@ -65,7 +65,7 @@ const Certifications = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-screen flex items-center justify-center pt-32 xl:pt-12 pb-12"
+      className="min-h-screen flex items-center justify-center pt-20 xl:pt-12 pb-12"
     >
       <div className="container mx-auto">
         <div className="flex flex-col gap-8">

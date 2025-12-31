@@ -82,19 +82,19 @@ const Contact = () => {
       animate={{
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
-        className='min-h-screen flex items-center pt-32 xl:pt-12 pb-12'  
+        className='min-h-screen flex items-center pt-20 xl:pt-12 pb-12'  
       >
         <div className='container mx-auto w-full h-full flex flex-col items-center
         xl:justify-center'>
           <div className='w-full'>
             <div className='flex flex-col xl:flex-row gap-6'>
               {/*text*/}
-              <div className='flex-1 xl:w-[600px] flex flex-col gap-12'>
+              <div className='flex-1 xl:w-[600px] flex flex-col gap-12 xl:justify-center'>
                 <div>
                   <h2 className='h2 mb-5'>
                     Get In <span className='text-accent'>Touch</span>
                   </h2>
-                  <p className='max-w-[460px] text-xs xl:text-sm'>
+                  <p className='max-w-[360px] text-xs xl:text-sm'>
                     Interested in working together or building something impactful?
                     Whether it's web development, data-driven projects, or tech discussions,
                     my inbox is always open. Let's create something meaningful.
@@ -141,15 +141,16 @@ const Contact = () => {
                         onChange={handleChange}
                       />
                     </div>
-                    <div className='flex-1 flex flex-col gap-2'>
-                      <Label htmlFor="lastname">Lastname <span className='text-accent'>*</span></Label>
+                    <div className='flex-1 flex flex-col gap-2 relative z-10'>
+                      <Label htmlFor="lastname">Lastname <span className='text-accent'></span></Label>
                       <Input 
                         id="lastname"
                         name="lastname"
                         placeholder="Last name"
-                        required
+                        // required
                         value={formData.lastname}
                         onChange={handleChange}
+                        className="relative z-10"
                       />
                     </div>
                   </div>

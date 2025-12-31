@@ -70,7 +70,7 @@ const activities = [
 ];
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('technologies');
+  const [activeTab, setActiveTab] = useState('education');
 
   return (
     <motion.section initial={{opacity: 0}} 
@@ -78,7 +78,7 @@ const About = () => {
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
 
-        className='min-h-screen flex items-center pt-32 2xl:pt-12 pb-12'
+        className='min-h-screen flex items-center pt-20 2xl:pt-12 pb-12'
         >
           <div className='container mx-auto px-0'>
             <div className='flex flex-col xl:flex-row items-center gap-24 w-full'>
@@ -104,25 +104,25 @@ const About = () => {
                   <h2 className='h2 mb-6'>
                     <span className='text-accent'>Intent creates Impact</span>
                   </h2>
-                  <p className='max-w-[540px] mb-6 text-xs xl:text-sm'>
+                  <p className='max-w-[580px] mb-6 text-xs xl:text-sm'>
                     Hola! I'm <span className='text-accent brightness-130 font-bold'>Bhargav Lende</span>, I began my college journey with little knowledge of 
                     <span className='text-accent brightness-130 font-bold'> data science</span>, but discovering the field in my first year led to a strong 
                     interest that continues to grow. Since then, I've been building a foundation in 
                     <span className='text-accent brightness-130 font-bold'> Python</span>, <span className='text-accent brightness-130 font-bold'>Java</span>, <span className='text-accent brightness-130 font-bold'>SQL</span>
                     , and <span className='text-accent brightness-130 font-bold'>data analysis</span> while also learning <span className='text-accent brightness-130 font-bold'>web development</span> to create interactive, data-driven applications.
                   </p>
-                  <p className='max-w-[540px] mb-6 text-xs xl:text-sm'>
+                  <p className='max-w-[580px] mb-6 text-xs xl:text-sm'>
                     Over time, I've worked on academic and personal projects spanning data analysis, machine learning fundamentals, 
                     and full-stack web development, helping me gain practical, hands-on experience. I also consistently practice 
                     problem-solving on platforms like LeetCode to strengthen my analytical and logical thinking.
                   </p>
-                  <p className='max-w-[540px] mb-10 text-xs xl:text-sm'>
+                  <p className='max-w-[580px] mb-10 text-xs xl:text-sm'>
                     Currently, my focus is on growing as a data scientist while continuing to learn modern web technologies, with 
                     the goal of building impactful, data-driven applications that blend strong insights with clean design.
                   </p>
                   
                   {/* Navigation Tabs */}
-                  <div className="flex gap-6 mb-8 border-b border-white/20 pb-2 max-w-[540px]">
+                  <div className="flex gap-6 mb-8 border-b border-white/20 pb-2 max-w-[580px]">
                     {['education', 'activities', 'technologies', ].map((tab) => (
                       <button 
                         key={tab}
@@ -144,7 +144,7 @@ const About = () => {
                     {/* Education Section */}
                     {activeTab === 'education' && (
                       <div className="mb-8">
-                        <div className="flex flex-col gap-6 max-w-[540px]">
+                        <div className="flex flex-col gap-6 max-w-[580px]">
                           {education.map((item, index) => (
                             <div key={index} className="flex flex-col gap-1 bg-tertiary/20 p-5 rounded-xl border border-accent/20 hover:border-accent transition-all duration-300">
                               <span className="text-accent text-sm font-semibold">{item.year}</span>
@@ -160,7 +160,7 @@ const About = () => {
                     {/* Activities Section */}
                     {activeTab === 'activities' && (
                       <div className="mb-8">
-                        <ul className="flex flex-col gap-5 max-w-[540px] list-disc pl-5">
+                        <ul className="flex flex-col gap-5 max-w-[580px] list-disc pl-5">
                           {activities.map((item, index) => (
                             <li key={index} className="text-white/80 leading-relaxed pl-2 text-base">
                               <h4 className="text-base font-bold">
@@ -178,7 +178,7 @@ const About = () => {
                     {/* Skills Section */}
                     {activeTab === 'technologies' && (
                       <div className="mb-8">
-                        <div className="grid grid-cols-2 gap-y-6 gap-x-8 max-w-[540px]">
+                        <div className="grid grid-cols-2 gap-y-6 gap-x-8 max-w-[580px]">
                           {technologies.map((skill, index) => (
                             <div key={index} className="flex items-center gap-3 group">
                               <div className="text-xl text-accent group-hover:text-white transition-all duration-300">

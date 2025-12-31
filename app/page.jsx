@@ -19,7 +19,7 @@ const Home = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-screen flex items-center pt-12 xl:pt-0 pb-12"
+      className="min-h-screen flex items-center pt-20 xl:pt-0 pb-12"
     >
       <div className="flex flex-col xl:flex-row items-center justify-between w-full">
         {/* text */}
