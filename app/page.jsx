@@ -19,11 +19,11 @@ const Home = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="h-screen flex items-center"
+      className="min-h-screen flex items-center pt-12 xl:pt-0"
     >
       <div className="flex flex-col xl:flex-row items-center justify-between w-full">
         {/* text */}
-        <div className="w-full xl:w-[550px] flex flex-col items-center xl:items-start text-center xl:text-left">
+        <div className="w-full xl:w-[550px] flex flex-col items-center xl:items-start text-center xl:text-left order-2 xl:order-none">
           <h1 className="h1 flex-1 mb-[28px]">
             Hi! I'm Bhargav, <br />
             <TypeAnimation 
@@ -82,15 +82,15 @@ const Home = () => {
         {/* blob & image */}
         <div className="hidden xl:block flex-1 relative z-30">
           {/*blob*/}
-          <Blob containerStyles="w-[550px] h-[550px]"/>
+          <Blob containerStyles="w-[450px] h-[450px]"/>
           {/* avatar img */}
           <Image 
             src={avatarImg} 
             alt="" 
-            width={600} 
-            height={600} 
+            width={450} 
+            height={450} 
             quality={100} 
-            className="absolute -top-16 left-[45px]"
+            className="absolute -top-16 left-[33px]"
           />
           {/* overlay gradient */}
           {/*<div className="w-full h-[164px] absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary via-primary/90 to-primary/40"></div>*/}

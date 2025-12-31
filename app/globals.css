@@ -37,19 +37,19 @@ body {
    TYPOGRAPHY UTILITIES
    ========================= */
 .h1 {
-  @apply text-[40px] md:text-[52px] xl:text-[56px] leading-[1] tracking-tight font-extrabold;
+  @apply text-[30px] md:text-[40px] xl:text-[40px] leading-[1.1] tracking-tight font-extrabold;
 }
 
 .h2 {
-  @apply text-[32px] md:text-[36px] xl:text-[38px] leading-[1.15] tracking-tight font-medium;
+  @apply text-[22px] md:text-[26px] xl:text-[30px] leading-[1.15] tracking-tight font-medium;
 }
 
 .h3 {
-  @apply text-[28px] md:text-[30px] xl:text-[32px] leading-[1.2] font-medium;
+  @apply text-[24px] md:text-[28px] xl:text-[30px] leading-[1.2] font-medium;
 }
 
 .h4 {
-  @apply text-[22px] md:text-[26px] leading-snug font-medium;
+  @apply text-[20px] md:text-[24px] leading-snug font-medium;
 }
 
 /* =========================

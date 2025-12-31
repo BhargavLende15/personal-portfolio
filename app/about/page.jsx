@@ -78,7 +78,7 @@ const About = () => {
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
 
-        className='h-screen flex items-center pt-24 2xl:pt-0'
+        className='min-h-screen flex items-center py-12 xl:py-0'
         >
           <div className='container mx-auto px-0'>
             <div className='flex flex-col xl:flex-row items-center gap-24 w-full h-[680px]'>
