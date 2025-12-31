@@ -9,6 +9,7 @@ import Blob from "@/components/Blob";
 import Image from "next/image";
 import Platforms from "@/components/Platforms";
 import avatarImg from "@/public/assets/assets/avatar.png";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -36,12 +37,14 @@ const Home = () => {
           <p className="max-w-[500px] mb-[44px]">
             I’m a Data Science student specializing in data analysis and visualization, with working knowledge of Web Development to deploy and present data-driven solutions effectively.
           </p>
-          <button className="btn btn-lg btn-accent mb-16">
-            <div className="flex items-center gap-3">
-              <span>View Resume</span>
-              <MdArrowOutward className="text-xl" />
-            </div>
-          </button>
+          <Link href="https://drive.google.com/file/d/1T5oJe9HxbgsNCJ-6MVgsnXl8GfCPg35d/view?usp=drive_link" target="_blank">
+            <button className="btn btn-lg btn-accent mb-16">
+              <div className="flex items-center gap-3">
+                <span>View Resume</span>
+                <MdArrowOutward className="text-xl" />
+              </div>
+            </button>
+          </Link>
 
           {/* contact info */}
           <div className="flex flex-col gap-4 mb-12 xl:mb-0">
@@ -50,7 +53,7 @@ const Home = () => {
               <span className="text-accent">
                 <HiOutlineMail className="text-xl" />
               </span>
-              <span>bhargavlende2208@gmail.com</span>
+              <span>bhargavlendeng@gmail.com</span>
             </a>
 
             <a href="https://www.linkedin.com/in/bhargav-lende-4b0232325/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg hover:text-accent transition-colors">

@@ -20,7 +20,7 @@ const certifications = [
     description: "Mastering data structures and algorithms using Java.",
     date: "2024",
     issuer: "NPTEL",
-    href: ""
+    href: "https://drive.google.com/file/d/1n1Z2J_Vfmc1wIZAzuh3wiB9NpNtiNpRp/view?usp=drive_link"
   },
   {
     icon: <FaUsersCog />,
@@ -36,7 +36,7 @@ const certifications = [
     description: "Building innovative solutions with a strong focus on UX and performance.",
     date: "2023",
     issuer: "Adobe",
-    href: ""
+    href: "https://drive.google.com/file/d/1wNAPsh1p3SSlKGymrmQuGB7dpWRNWC5c/view?usp=drive_link"
   },
   {
     icon: <FaJava />,
@@ -44,7 +44,7 @@ const certifications = [
     description: "Core Java concepts including OOP, syntax, and problem-solving.",
     date: "2023",
     issuer: "HackerRank",
-    href: ""
+    href: "https://drive.google.com/file/d/1b2nMORSRKAuQmjrySvbcgrrLPaPW6TAT/view?usp=drive_link"
   },
   {
     icon: <FaBrain />,
@@ -52,7 +52,7 @@ const certifications = [
     description: "Hands-on experience with machine learning concepts and applications.",
     date: "2022",
     issuer: "EduSkills",
-    href: ""
+    href: "https://drive.google.com/file/d/1sOByzw8RKAYRSjDDPqwp_Yt3BuwRYb-y/view?usp=drive_link"
   },
 ];
 

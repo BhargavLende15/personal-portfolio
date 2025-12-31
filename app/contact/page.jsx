@@ -96,7 +96,9 @@ const Contact = () => {
                     Get In <span className='text-accent'>Touch</span>
                   </h2>
                   <p className='max-w-[460px]'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum provident quia illo tempore dolorem numquam iusto inventore quidem dignissimos sed, quo soluta natus hic quibusdam minus, rem corporis. Corporis, saepe.
+                    Interested in working together or building something impactful?
+                    Whether it’s web development, data-driven projects, or tech discussions,
+                    my inbox is always open. Let’s create something meaningful.
                   </p>
                 </div>
                 {/* info */}
@@ -106,7 +108,7 @@ const Contact = () => {
                     <span className='text-accent'>
                       <HiOutlineMail className="text-2xl" />
                     </span>
-                    <span>bhargavlende2208@gmail.com</span>
+                    <span>bhargavlendeng@gmail.com</span>
                   </div>
                   {/* email */}
                   <div className='flex items-center gap-4 text-lg'>
