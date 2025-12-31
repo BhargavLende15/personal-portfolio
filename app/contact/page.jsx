@@ -64,77 +64,74 @@ const Contact = () => {
               </div>
               {/*form*/}
               <div className='flex-1'>
-                <form className='flex flex-col gap-6 items-start'>
-                  <div className='flex flex-col xl:flex-row gap-6 w-full'>
-                    <div className='w-full'>
-                      <Label htmlFor="name">Firstname<span className='text-accent'>*</span>
+                <form className='flex flex-col gap-6 w-full'>
+                  {/* Name Row */}
+                  <div className='flex flex-col xl:flex-row gap-6'>
+                    <div className='flex-1 flex flex-col gap-2'>
+                      <Label htmlFor="firstname">Firstname <span className='text-accent'>*</span></Label>
                       <Input 
                         id="firstname"
                         name="firstname"
                         placeholder="First name"
                         required
                       />
-                      </Label>
                     </div>
-
-                    <div className='w-full'>
-                      <Label htmlFor="name">Lastname<span className='text-accent'>*</span>
+                    <div className='flex-1 flex flex-col gap-2'>
+                      <Label htmlFor="lastname">Lastname <span className='text-accent'>*</span></Label>
                       <Input 
                         id="lastname"
                         name="lastname"
                         placeholder="Last name"
                         required
                       />
-                      </Label>
                     </div>
-
-                    <div className='w-full'>
-                      <Label htmlFor="name">Email<span className='text-accent'>*</span>
-                      <Input 
-                        id="email"
-                        name="email"
-                        placeholder="youremail@gmail.com"
-                        required
-                      />
-                      </Label>
-                    </div>
-
-                    <div className='w-full'>
-                      <Label htmlFor="name">I'm interested in <span className='text-accent'>*</span></Label>
-                      <Select name='service' required>
-                        <SelectTrigger 
-                          id='service'
-                          className="w-full !h-12 bg-white/5 border-white/10 px-4">
-                          <SelectValue placeholder="Choose here" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-black border-white/20">
-                          <SelectItem value="data Science">Data Science</SelectItem>
-                          <SelectItem value="webdev">Web Development</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className='w-full'>
-                      <Label htmlFor="name">Message <span className='text-accent'>*</span>
-                      </Label>
-                      <Textarea 
-                        id="message"
-                        name='message'
-                        placeholder='Write your name...'
-                        className="min-h-[160px] bg-white/5 border:bg-white/10
-                        focus-visible:border-accent focus-visible:ring-accent
-                        focus-visible:ring-[1px] resize-none p-4 selection:bg-accent
-                        placeholder:text-white/50"
-                      />
-                    </div>
-                    {/* btn */}
-                    <button className='btn btn-lg btn-accent'>
-                      <div className='flex items-center gap-3'>
-                        <span className='font-medium'>Send message</span>
-                        <HiOutlineArrowLongRight className='text-xl'/>
-                      </div>
-                    </button>
-
                   </div>
+
+                  <div className='flex flex-col gap-2'>
+                    <Label htmlFor="email">Email <span className='text-accent'>*</span></Label>
+                    <Input 
+                      id="email"
+                      name="email"
+                      placeholder="youremail@gmail.com"
+                      required
+                    />
+                  </div>
+
+                  <div className='flex flex-col gap-2'>
+                    <Label htmlFor="service">I'm interested in <span className='text-accent'>*</span></Label>
+                    <Select name='service' required>
+                      <SelectTrigger 
+                        id='service'
+                        className="w-full !h-[48px] bg-white/5 border-white/10 px-4 focus:border-accent focus:ring-accent focus:ring-[1px] outline-none text-base md:text-sm">
+                        <SelectValue placeholder="Choose here" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-primary border-white/20 text-white">
+                        <SelectItem value="data Science">Data Science</SelectItem>
+                        <SelectItem value="webdev">Web Development</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className='flex flex-col gap-2'>
+                    <Label htmlFor="message">Message <span className='text-accent'>*</span></Label>
+                    <Textarea 
+                      id="message"
+                      name='message'
+                      placeholder='Write your message...'
+                      className="min-h-[160px] bg-white/5 border-white/10
+                      focus-visible:border-accent focus-visible:ring-accent
+                      focus-visible:ring-[1px] resize-none p-4 selection:bg-accent
+                      placeholder:text-white/50 text-base md:text-sm outline-none rounded-md"
+                    />
+                  </div>
+
+                  {/* btn */}
+                  <button className='btn btn-lg btn-accent w-full xl:w-max'>
+                    <div className='flex items-center gap-3'>
+                      <span className='font-medium'>Send message</span>
+                      <HiOutlineArrowLongRight className='text-xl'/>
+                    </div>
+                  </button>
                 </form>
               </div>
             </div>
