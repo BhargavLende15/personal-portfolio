@@ -1,8 +1,10 @@
 "use client"
+import { useState } from 'react';
 import { motion } from 'framer-motion'
 import { Label } from "@/components/ui/label";
 import {Input} from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { FaLinkedin } from "react-icons/fa";
 
 import {
   Select,
@@ -16,6 +18,66 @@ import {HiOutlineMapPin, HiOutlineArrowLongRight} from 'react-icons/hi2'
 import {HiOutlinePhone, HiOutlineMail} from "react-icons/hi";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSelectChange = (value) => {
+    setFormData(prev => ({
+      ...prev,
+      service: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: false, error: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ loading: false, success: true, error: '' });
+        setFormData({
+          firstname: '',
+          lastname: '',
+          email: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setStatus({ loading: false, success: false, error: data.error || 'Something went wrong.' });
+      }
+    } catch (error) {
+      setStatus({ loading: false, success: false, error: 'Failed to send message.' });
+    }
+  };
+
   return <motion.section initial={{opacity: 0}} 
       animate={{
         opacity: 1, 
@@ -42,16 +104,16 @@ const Contact = () => {
                   { /* phone */}
                   <div className='flex items-center gap-4 text-lg'>
                     <span className='text-accent'>
-                      <HiOutlinePhone className="text-2xl" />
+                      <HiOutlineMail className="text-2xl" />
                     </span>
-                    <span>+11 22 33 44 55</span>
+                    <span>bhargavlende2208@gmail.com</span>
                   </div>
                   {/* email */}
                   <div className='flex items-center gap-4 text-lg'>
                     <span className='text-accent'>
-                      <HiOutlineMail className="text-2xl" />
+                      <FaLinkedin className="text-2xl" />
                     </span>
-                    <span>jake@gmail.com</span>
+                    <span>Bhargav Lende</span>
                   </div>
                   {/* location */}
                   <div className='flex items-center gap-4 text-lg'>
@@ -64,7 +126,7 @@ const Contact = () => {
               </div>
               {/*form*/}
               <div className='flex-1'>
-                <form className='flex flex-col gap-6 w-full'>
+                <form className='flex flex-col gap-6 w-full' onSubmit={handleSubmit}>
                   {/* Name Row */}
                   <div className='flex flex-col xl:flex-row gap-6'>
                     <div className='flex-1 flex flex-col gap-2'>
@@ -74,6 +136,8 @@ const Contact = () => {
                         name="firstname"
                         placeholder="First name"
                         required
+                        value={formData.firstname}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className='flex-1 flex flex-col gap-2'>
@@ -83,6 +147,8 @@ const Contact = () => {
                         name="lastname"
                         placeholder="Last name"
                         required
+                        value={formData.lastname}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -94,12 +160,14 @@ const Contact = () => {
                       name="email"
                       placeholder="youremail@gmail.com"
                       required
+                      value={formData.email}
+                      onChange={handleChange}
                     />
                   </div>
 
                   <div className='flex flex-col gap-2'>
                     <Label htmlFor="service">I'm interested in <span className='text-accent'>*</span></Label>
-                    <Select name='service' required>
+                    <Select name='service' required onValueChange={handleSelectChange} value={formData.service}>
                       <SelectTrigger 
                         id='service'
                         className="w-full !h-[48px] bg-white/5 border-white/10 px-4 focus:border-accent focus:ring-accent focus:ring-[1px] outline-none text-base md:text-sm">
@@ -122,22 +190,28 @@ const Contact = () => {
                       focus-visible:border-accent focus-visible:ring-accent
                       focus-visible:ring-[1px] resize-none p-4 selection:bg-accent
                       placeholder:text-white/50 text-base md:text-sm outline-none rounded-md"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
 
                   {/* btn */}
-                  <button className='btn btn-lg btn-accent w-full xl:w-max'>
+                  <button type="submit" className='btn btn-lg btn-accent w-full xl:w-max' disabled={status.loading}>
                     <div className='flex items-center gap-3'>
-                      <span className='font-medium'>Send message</span>
-                      <HiOutlineArrowLongRight className='text-xl'/>
+                      <span className='font-medium'>{status.loading ? 'Sending...' : 'Send message'}</span>
+                      {!status.loading && <HiOutlineArrowLongRight className='text-xl'/>}
                     </div>
                   </button>
+                  {status.success && <p className="text-accent">Message sent successfully!</p>}
+                  {status.error && <p className="text-red-500">{status.error}</p>}
                 </form>
               </div>
             </div>
           </div>
         </div>
       </motion.section>
+
 }
 
 export default Contact
