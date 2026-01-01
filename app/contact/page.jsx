@@ -88,7 +88,7 @@ const Contact = () => {
           <div className='w-full'>
             <div className='flex flex-col xl:flex-row gap-6'>
               {/*text*/}
-              <div className='flex-1 xl:w-[600px] flex flex-col gap-8 xl:gap-12 xl:justify-center'>
+              <div className='flex-1 flex flex-col gap-8 xl:gap-12 xl:justify-center'>
                 <div className="text-center xl:text-left">
                   <h2 className='h2 mb-5 break-words'>
                     Get In <span className='text-accent'>Touch</span>
@@ -140,16 +140,15 @@ const Contact = () => {
                         onChange={handleChange}
                       />
                     </div>
-                    <div className='flex-1 flex flex-col gap-2 relative z-10'>
-                      <Label htmlFor="lastname">Lastname <span className='text-accent'></span></Label>
+                    <div className='flex-1 flex flex-col gap-2'>
+                      <Label htmlFor="lastname">Lastname <span className='text-accent'>*</span></Label>
                       <Input 
                         id="lastname"
                         name="lastname"
                         placeholder="Last name"
-                        // required
+                        required
                         value={formData.lastname}
                         onChange={handleChange}
-                        className="relative z-10"
                       />
                     </div>
                   </div>

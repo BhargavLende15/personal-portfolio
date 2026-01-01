@@ -15,6 +15,14 @@ export async function POST(req) {
 
     // Configure the transporter
     // Note: The user needs to set these environment variables in .env.local
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Missing EMAIL_USER or EMAIL_PASS environment variables');
+      return NextResponse.json(
+        { error: 'Server configuration error. Please contact the administrator.' },
+        { status: 500 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
       service: 'gmail', // or another service like 'outlook', 'yahoo'
       auth: {
