@@ -27,6 +27,18 @@
 }
 
 /* =========================
+   SCROLLBAR (Remove white bar)
+   ========================= */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* =========================
    BASE STYLES
    ========================= */
 html, body {
