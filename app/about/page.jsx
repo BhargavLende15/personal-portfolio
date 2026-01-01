@@ -129,7 +129,7 @@ const About = () => {
                   </p>
                   
                   {/* Navigation Tabs */}
-                  <div className="flex gap-6 mb-8 border-b border-white/20 pb-2 max-w-[580px]">
+                  <div className="flex gap-4 mb-6 border-b border-white/20 pb-2 w-full max-w-[580px] overflow-x-auto whitespace-nowrap scrollbar-hide">
                     {['education', 'activities', 'technologies', ].map((tab) => (
                       <button 
                         key={tab}
@@ -138,7 +138,7 @@ const About = () => {
                           activeTab === tab 
                             ? 'text-accent border-b-2 border-accent' 
                             : 'text-white/60 hover:text-white'
-                        } capitalize font-medium text-base xl:text-lg pb-2 transition-all`}
+                        } capitalize font-medium text-sm xl:text-lg pb-2 transition-all flex-shrink-0`}
                       >
                         {tab}
                       </button>
@@ -146,16 +146,16 @@ const About = () => {
                   </div>
 
                   {/* Tab Content */}
-                  <div className="min-h-[300px] pb-4">
+                  <div className="min-h-[300px] pb-4 w-full">
 
                     {/* Education Section */}
                     {activeTab === 'education' && (
-                      <div className="mb-8">
-                        <div className="flex flex-col gap-5 max-w-[580px] w-full">
+                      <div className="mb-8 w-full">
+                        <div className="flex flex-col gap-5 w-full">
                           {education.map((item, index) => (
                             <div key={index} className="flex flex-col gap-1 bg-tertiary/20 p-4 rounded-xl border border-accent/20 hover:border-accent transition-all duration-300 w-full">
-                              <span className="text-accent text-sm font-semibold">{item.year}</span>
-                              <h4 className="text-base xl:text-lg font-bold">{item.degree}</h4>
+                              <span className="text-accent text-xs font-semibold">{item.year}</span>
+                              <h4 className="text-sm xl:text-lg font-bold">{item.degree}</h4>
                               <p className="text-white/80 font-semibold text-xs break-words">{item.institution}</p>
                               <p className='text-white/60 text-xs break-words'>{item.desc}</p>
                             </div>
@@ -166,10 +166,10 @@ const About = () => {
 
                     {/* Activities Section */}
                     {activeTab === 'activities' && (
-                      <div className="mb-8">
-                        <ul className="flex flex-col gap-4 max-w-[580px] w-full list-disc pl-5">
+                      <div className="mb-8 w-full">
+                        <ul className="flex flex-col gap-4 w-full list-disc pl-5">
                           {activities.map((item, index) => (
-                            <li key={index} className="text-white/80 leading-relaxed pl-2 text-sm xl:text-base w-full">
+                            <li key={index} className="text-white/80 leading-relaxed pl-2 text-xs xl:text-base w-full">
                               <h4 className="text-sm xl:text-base font-bold">
                               <span className="text-accent">{item.role}</span>
                               <span className="text-white mx-1"> @</span>
@@ -184,8 +184,8 @@ const About = () => {
 
                     {/* Skills Section */}
                     {activeTab === 'technologies' && (
-                      <div className="mb-8">
-                        <div className="grid grid-cols-2 gap-y-5 gap-x-6 max-w-[580px] w-full">
+                      <div className="mb-8 w-full">
+                        <div className="grid grid-cols-2 gap-y-5 gap-x-6 w-full">
                           {technologies.map((skill, index) => (
                             <div key={index} className="flex items-center gap-3 group w-full">
                               <div className="text-lg xl:text-xl text-accent group-hover:text-white transition-all duration-300 flex-shrink-0">
