@@ -82,16 +82,15 @@ const Contact = () => {
       animate={{
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
-        className='min-h-screen flex items-center pt-4 xl:pt-12 pb-12'  
+        className='min-h-screen flex items-center pt-8 xl:pt-12 pb-12'  
       >
-        <div className='container mx-auto w-full h-full flex flex-col items-center
-        xl:justify-center'>
+        <div className='container mx-auto w-full h-full flex flex-col items-center xl:justify-center px-4 xl:px-0'>
           <div className='w-full'>
             <div className='flex flex-col xl:flex-row gap-6'>
               {/*text*/}
-              <div className='flex-1 xl:w-[600px] flex flex-col gap-12 xl:justify-center'>
-                <div>
-                  <h2 className='h2 mb-5'>
+              <div className='flex-1 xl:w-[600px] flex flex-col gap-8 xl:gap-12 xl:justify-center'>
+                <div className="text-center xl:text-left">
+                  <h2 className='h2 mb-5 break-words'>
                     Get In <span className='text-accent'>Touch</span>
                   </h2>
                   <p className='max-w-[360px] text-xs xl:text-sm'>

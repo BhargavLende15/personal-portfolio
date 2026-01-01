@@ -78,10 +78,10 @@ const About = () => {
         opacity: 1, 
         transition: {delay: 2.4, duration: 0.4, ease: "easeIn"}}}
 
-        className='min-h-screen flex items-center pt-4 2xl:pt-12 pb-12'
+        className='min-h-screen flex items-center pt-8 2xl:pt-12 pb-12'
         >
-          <div className='container mx-auto px-0'>
-            <div className='flex flex-col xl:flex-row items-center gap-24 w-full h-[calc(100vh-80px)] xl:h-auto'>
+          <div className='container mx-auto px-4 xl:px-0'>
+            <div className='flex flex-col xl:flex-row items-center gap-10 xl:gap-24 w-full h-auto'>
               {/* img & social icons*/}
               <div className='hidden xl:block flex-1 relative z-30'>
                 <Blob containerStyles="w-[400px] h-[400px]"/>
@@ -95,9 +95,16 @@ const About = () => {
                 />
               </div>
               {/* scroll area*/}
-              <ScrollArea className="w-full h-[calc(100vh-100px)] xl:h-[680px]">
-                <div className="pr-8 pt-2 xl:pt-0">
-                  <div className='flex items-center gap-3 mb-4 mt-2 xl:mt-0'>
+              <div className="w-full h-auto xl:h-[680px] flex flex-col">
+                  {/* On mobile, we use natural page scrolling. On desktop, we can use ScrollArea if desired, 
+                      but user asked for "scroll function" which implies visibility. 
+                      If we remove ScrollArea on mobile and just use a div, it will scroll with the page.
+                      For desktop, we keep the fixed height look if preferred, or we can make it scrollable too.
+                      Given the previous code had ScrollArea, I will keep it for desktop but ensure mobile is fluid.
+                   */}
+                  <ScrollArea className="h-auto xl:h-[680px] w-full">
+                    <div className="xl:pr-8">
+                      <div className='flex items-center gap-3 mb-4 mt-2 xl:mt-0'>
                     <div className='w-2 h-2 bg-accent rounded-full'></div>
                     <p className='text-sm'>About me</p>
                   </div>
@@ -196,6 +203,7 @@ const About = () => {
 
                 </div>
               </ScrollArea>
+              </div>
             </div>
           </div>
       </motion.section>
